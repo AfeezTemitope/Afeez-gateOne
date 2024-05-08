@@ -15,7 +15,9 @@ public class ArithmeticChallenge {
             int firstInteger = random.nextInt(10) + 1;
             int secondInteger = random.nextInt(10) + 1;
             char operator = randomOperator();
-	calculateResult(firstInteger+operator+secondInteger);
+	System.out.print("question " + attempt + " " +firstInteger + secondInteger);
+	int result = scanner.nextInt();
+	
 	
         }
     }
@@ -37,7 +39,7 @@ public class ArithmeticChallenge {
         return operators[random.nextInt(operators.length)];
     }
 
-    public static double calculateResult(int firstInteger, int secondInteger, char operator) {
+    public static double calculateResult(int firstInteger, char operator, int secondInteger) {
         switch (operator) {
             case '+':
                 return firstInteger + secondInteger;
