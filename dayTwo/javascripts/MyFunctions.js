@@ -7,5 +7,16 @@ function evenIndex(numbers) {
 
     return evenElements; 
 }
-
 module.exports = evenIndex;
+
+function oddIndex(numbers) {
+    const oddElements = [];
+
+    for (let index = 1; index < numbers.length; index += 2) {
+        oddElements.push(numbers[index]); 
+}
+
+    return oddElements; 
+}
+
+module.exports = oddIndex;
