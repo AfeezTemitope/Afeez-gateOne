@@ -7,7 +7,9 @@ function evenIndex(numbers) {
 
     return evenElements; 
 }
+
 module.exports = evenIndex;
+
 
 function oddIndex(numbers) {
     const oddElements = [];
