@@ -11,15 +11,8 @@ public class ArithmeticChallenge {
 
         printHeader();
 
-        for (int attempt = 1; attempt <= totalAttempts; attempt++) {
-            int firstInteger = random.nextInt(10) + 1;
-            int secondInteger = random.nextInt(10) + 1;
-            char operator = randomOperator();
-	System.out.print("question " + attempt + " " +firstInteger + secondInteger);
-	int result = scanner.nextInt();
-	
-	
-        }
+
+
     }
 
     public static void printHeader() {
