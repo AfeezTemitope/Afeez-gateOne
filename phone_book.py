@@ -12,17 +12,21 @@ if user_input == "yes" :
 	elif available_option == 2:
 		if my_phonebook:
 			remove_contact = input("Enter the name of the contact to remove: ")
-		if remove_contact in my_phonebook:
-			my_phonebook.remove(remove_contact)
-                print(f"Contact '{remove_contact}' removed from the phonebook.")
-		else:
-               	print(f"Contact '{remove_contact}' not found in the phonebook.")
-        else:
-            print("Phonebook is empty. No contacts to remove.")
-		my_phonebook.remove(add_contact)
-		print("contact removed ")
+		  	if remove_contact in my_phonebook:
+				my_phonebook.remove(remove_contact)
+				print(f"Contact '{remove_contact}' removed from the phonebook.")
+			else:
+               			print(f"Contact '{remove_contact}' not found in the phonebook.")
+        	else:
+			print("Phonebook is empty. No contacts to remove.")
+			my_phonebook.remove(add_contact)
+			print("contact removed ")
 	elif available_option == 3:
-		print("searching")
+		search_contact = input("Enter the name to search: ")
+        	if search_contact in my_phonebook:
+			print(f"Contact '{search_contact}' found in the phonebook.")
+        	else:
+			print(f"Contact '{search_contact}' not found in the phonebook.")
 	elif available_option == 4:
 		old_name = input("Enter the current name of the contact: ")
 		if old_name in my_phonebook:
