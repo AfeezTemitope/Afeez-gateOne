@@ -1,18 +1,27 @@
+import java.util.ArrayList;
 import java.util.Scanner;
-	public class PhoneBook{
-		public static void main(System.in){
-	Scanner scanner = new Scanner(System.in);
 
-	printPrompt();
-	System.out.print("YES OR NO ");
-	String userInput = scanner.nextLine();
+	public class Phonebook {
+		public static void main(String... args){
+			ArrayList<String> myPhonebook = new ArrayList<>();
+		Scanner scanner = new Scanner(System.in);
+		printPrompt();
+		String userInput = scanner.nextLine().toLowerCase();
+
+		}
 
 
 
+
+
+
+
+public static void printPrompt(){
+String prompt = """ 
+ =================================
+|>>>>>WELCOME TO MY PHONEBOOK<<<<<|
+ =================================
+   Do you want to add a contact?? """;
+System.out.println(prompt);
+}
 	}
-public void printPrompt(){
-String prompt = """
->>>>> DO YOU WANT TO ADD A CONTACT <<<<< """;
-System.out.print(prompt)
-}
-}

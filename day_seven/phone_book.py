@@ -29,8 +29,8 @@ def edit_contact(phonebook):
         print(f"Contact '{old_name}' not found in the phonebook.")
 
 
-    phonebook = {}
-    while True:
+phonebook = {}
+while True:
         print("=======================")
         print("DO YOU WANT TO ADD A CONTACT ON MY PHONEBOOK")
         print("=======================")
