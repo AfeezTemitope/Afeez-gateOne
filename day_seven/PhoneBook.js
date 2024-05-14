@@ -32,10 +32,24 @@ switch(availableOption){
 case "1":
 	const addContact = prompt("Enter the name u want to save ")
 	const addContactNumber = prompt("Enter phone number ")
-	myPhonebook[addContact] = addContactNumber
+	myPhonebook.push(name: addContact, number: addContactNumber)
 	console.log("Contact saved successfully. ")
 	break;
+
 case "2": 
+	if (this.myPhonebook.length !== 0) {
+	const deleteContact = prompt("Enter the name of contact u want to delete ")
+	if (myphonebook.hasOwnProperty(deleteContact)) {
+        delete myphonebook[removeContact];
+        console.log(`Contact ${removeContact} has been removed from the phonebook.`);
+	} else {
+        console.log(`Contact ${removeContact} not found in the phonebook.`);
+    	}
+} 	else {
+    	console.log("Phonebook is empty. No contact to remove.");
+	}
+		break;
+
 	
 default:
 	console.log("invalid option. please choose a valid option")
