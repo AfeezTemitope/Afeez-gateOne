@@ -1,5 +1,5 @@
 const prompt = require('prompt-sync')();
-var myPhonebook = {}
+var myPhonebook = []
 
 function printPrompt(){
 const prompt =`
@@ -29,26 +29,38 @@ function availableOptions() {
 while(true){
 	const availableOption = prompt("choose an option ")
 switch(availableOption){
+
 case "1":
 	const addContact = prompt("Enter the name u want to save ")
 	const addContactNumber = prompt("Enter phone number ")
-	myPhonebook.push(name: addContact, number: addContactNumber)
+	myPhonebook.push(addContact, addContactNumber)
 	console.log("Contact saved successfully. ")
 	break;
 
-case "2": 
-	if (this.myPhonebook.length !== 0) {
-	const deleteContact = prompt("Enter the name of contact u want to delete ")
-	if (myphonebook.hasOwnProperty(deleteContact)) {
-        delete myphonebook[removeContact];
-        console.log(`Contact ${removeContact} has been removed from the phonebook.`);
+case "2":
+	if(myPhonebook.length !== 0){
+	const removeContact = prompt("Enter the name of the contact to remove ")
+	if(myPhonebook.includes(removeContact)){
+	myPhonebook.splice(removeContact)
+	console.log(`contact ${removeContact} has been removed`)
+	}else {
+	console.log(`contact ${removeContact} not found in myPhonebook`)
+	}
 	} else {
-        console.log(`Contact ${removeContact} not found in the phonebook.`);
-    	}
-} 	else {
-    	console.log("Phonebook is empty. No contact to remove.");
+	console.log("phonebook is empty no contact to remove ")
+	} 
+	break;
+
+case "3":
+	const searchContact = prompt("Enter contact u want to search for... ")
+	if (myPhonebook.includes(searchContact)){
+	console.log(`contact ${searchContact}  found in the phoneBook`)
+	} else {
+	console.log(`contact ${searchContact} not found in the phonebook`)
 	}
 		break;
+case "4":
+
 
 	
 default:
@@ -56,8 +68,7 @@ default:
 	return;
 
 }
-
-
-
 }
+
+
 }
