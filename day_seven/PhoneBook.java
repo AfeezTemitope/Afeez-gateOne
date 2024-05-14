@@ -20,9 +20,13 @@ import java.util.Scanner;
 		System.out.print("Enter the name u want to save ");
 		String addContact = scanner.nextLine();
 		System.out.print("Enter phoneNumber ");
-		int addContactNumber = scanner.nextInt();
+		String addContactNumber = scanner.nextLine();
+		if(addContactNumber.length() > 11 || addContactNumber.length() != 11){
+		System.out.println("Invalid phone number ");
+		} else {
 		myPhonebook.add(addContact);
 		System.out.print("Contact saved successfully. ");
+		}
 			break;
 	case 2:
 	if(!myPhonebook.isEmpty()){
@@ -40,6 +44,15 @@ import java.util.Scanner;
 		System.out.println("phonebook is empty no contact to remove ");
 		}
 
+			break;
+	case 3:
+		System.out.print("Enter contact u want to search for ");
+		String searchContact = scanner.nextLine();
+		if (myPhonebook.contains(searchContact)){
+		System.out.println("contact "+ searchContact + " found in the phonebook");
+		} else {
+		System.out.println("contact "+ searchContact + " not found in the phonebook" );
+		}
 			break;
 	case 5:
 		System.out.print("exiting phone book!!! ");

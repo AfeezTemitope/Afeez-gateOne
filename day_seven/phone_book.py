@@ -30,13 +30,14 @@ def edit_contact(phonebook):
 
 
 phonebook = {}
-while True:
-        print("=======================")
-        print("DO YOU WANT TO ADD A CONTACT ON MY PHONEBOOK")
-        print("=======================")
-        user_input = input("YES or NO: ").lower()
-        if user_input == "yes":
-            print("AVAILABLE OPTIONS")
+print("=======================")
+print("DO YOU WANT TO ADD A CONTACT ON MY PHONEBOOK")
+print("=======================")
+user_input = input("YES or NO: ").lower()
+if user_input == "yes":
+ while True:
+
+            print("\nAVAILABLE OPTIONS")
             print("1. Add Contact")
             print("2. Remove contact")
             print("3. Search contact")
@@ -59,6 +60,6 @@ while True:
                     print("Invalid option. Please choose a valid option (1, 2, 3, 4, or 5).")
             except ValueError:
                 print("Invalid input. Please enter a valid option number.")
-        else:
-            print("NO conTacT avaiLabLe")
+else:
+	print("NO conTacT avaiLabLe")
 
