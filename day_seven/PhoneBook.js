@@ -60,9 +60,16 @@ case "3":
 	}
 		break;
 case "4":
-
-
-	
+	const oldName = prompt("Enter the current contact: ")
+	if(myPhonebook.includes(oldName)){
+	const newName = prompt("Enter the correct name for the contact ")
+	const index = myPhonebook.indexOf(oldName)
+	myPhonebook.splice(index, 1, newName)
+	console.log(`contact ${oldName} updated to ${newName} .`)
+	} else {
+	console.log(`contact ${oldName} not found in the phonebook`)
+	}
+		break;	
 default:
 	console.log("invalid option. please choose a valid option")
 	return;
