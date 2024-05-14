@@ -20,13 +20,10 @@ import java.util.Scanner;
 		System.out.print("Enter the name u want to save ");
 		String addContact = scanner.nextLine();
 		System.out.print("Enter phoneNumber ");
-		String addContactNumber = scanner.nextLine();
-		if(addContactNumber.length() > 11 || addContactNumber.length() != 11){
-		System.out.println("Invalid phone number ");
-		} else {
+		String addContactNumber = scanner.nextLine();		
 		myPhonebook.add(addContact);
+		myPhonebook.add(addContactNumber);
 		System.out.print("Contact saved successfully. ");
-		}
 			break;
 	case 2:
 	if(!myPhonebook.isEmpty()){
@@ -54,6 +51,19 @@ import java.util.Scanner;
 		System.out.println("contact "+ searchContact + " not found in the phonebook" );
 		}
 			break;
+
+	case 4:
+		System.out.print("Enter the current name of the contact: ");
+		String oldName = scanner.nextLine();
+		if (myPhonebook.contains(oldName)) {
+		System.out.print("Enter the correct name for the contact: ");
+		String newName = scanner.nextLine();
+		myPhonebook.set(myPhonebook.indexOf(oldName), newName);
+		System.out.println("Contact '" + oldName + "' updated to '" + newName + "'.");
+		} else {
+		System.out.println("Contact '" + oldName + "' not found in the phonebook.");
+		}
+                        break;
 	case 5:
 		System.out.print("exiting phone book!!! ");
 		return;
@@ -80,7 +90,7 @@ String prompt = """
  =================================
 |>>>>>WELCOME TO MY PHONEBOOK<<<<<|
  =================================
-   Do you want to add a contact?? """;
+   Do you want to add a contact 'yes or no' ?? """;
 System.out.println(prompt);
 }
 
