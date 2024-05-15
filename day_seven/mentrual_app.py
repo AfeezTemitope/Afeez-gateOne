@@ -1,4 +1,4 @@
-from menstrual_function import welcome_message,calculate_next_period
+from menstrual_function import welcome_message,calculate_next_period, calculate_safe_period
 import datetime
 current_date = datetime.date.today()
 
@@ -7,14 +7,17 @@ current_date = datetime.date.today()
    
 
 
-#safe period
 welcome_message()
 name = input("what`s your name bby girl ? ")
 print(f'hello sweet {name} ❤.\nlet assume you have been tracking your cycle for the past 6 month\nNow let get your cycle lenght ')
 
-short_cycle = int(input("what`s your shortest cycle length: "))
-longest_cycle = int(input("what`s your longest cycle length: "))
-cycle_length = int(input("whats your normal cycle length: "))
+last_menstrual_period = input("Enter the first day of your last menstrual period (YYYY-MM-DD): ")
+last_menstrual_period_date = datetime.datetime.strptime(last_menstrual_period, "%Y-%m-%d").date()
+cycle_length = int(input("Enter your cycle length (in days): "))
+menstruation_duration = int(input("Enter your menstruation duration (in days): "))
+
+safe_period = calculate_safe_period(last_menstrual_period_date, cycle_length, menstruation_duration )
+print(safe_period)
 
 #next period date
 next_period = calculate_next_period(cycle_length)
@@ -23,5 +26,7 @@ print(f"Next expected period date: {next_period}")
 
 
 #💔  
+
+
  
 
